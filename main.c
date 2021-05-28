@@ -29,3 +29,34 @@ void post0rder(Node *ptr) {
     post0rder(ptr->right);
     printf("%d\n", ptr->key);
 }
+
+Node* findNode(Node *ptr, int key) {
+    while (ptr) {
+        if (key < ptr->key) {
+            ptr = ptr->left;
+            continue;
+        } else if (key > ptr->key) {
+            ptr = ptr->right;
+            continue;
+        } else {
+            return ptr;
+        }
+    }
+    return NULL;
+}
+
+Node * findMin(Node *ptr) {
+    if (ptr == NULL)
+        return NULL;
+    while (ptr->left)
+        ptr = ptr->left;
+    return ptr;
+}
+
+Node * findMax(Node *ptr) {
+    if (ptr == NULL)
+        return NULL;
+    while (ptr->right)
+        ptr = ptr->right;
+    return ptr;
+}
