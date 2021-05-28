@@ -35,17 +35,18 @@ Node* findNode(Node *ptr, int key) {
         if (key < ptr->key) {
             ptr = ptr->left;
             continue;
-        } else if (key > ptr->key) {
+        }
+        else if (key > ptr->key) {
             ptr = ptr->right;
             continue;
-        } else {
-            return ptr;
         }
+        else
+            return ptr;
     }
     return NULL;
 }
 
-Node * findMin(Node *ptr) {
+Node* findMin(Node *ptr) {
     if (ptr == NULL)
         return NULL;
     while (ptr->left)
@@ -53,7 +54,7 @@ Node * findMin(Node *ptr) {
     return ptr;
 }
 
-Node * findMax(Node *ptr) {
+Node* findMax(Node *ptr) {
     if (ptr == NULL)
         return NULL;
     while (ptr->right)
