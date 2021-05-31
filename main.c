@@ -61,3 +61,31 @@ Node* findMax(Node *ptr) {
         ptr = ptr->right;
     return ptr;
 }
+
+Node *findPredecessor(Node *ptr) {
+    if (ptr->left)
+        return findMax(ptr->left);
+    Node *parent = ptr->parent;
+    while (parent )
+
+    while (parent && ptr->key < parent->key) {
+        ptr = parent;
+        parent = ptr->parent;
+    }
+    return parent;
+}
+
+Node *findSuccessor(Node *ptr) {
+    if (ptr->right)
+        return findMin(ptr->right);
+    Node *parent = ptr->parent;
+    while (parent && parent->key < ptr->key) {
+        ptr = parent;
+        parent = ptr->parent;
+    }
+    return parent;
+}
+
+Node *insertNode(Node *root, Node* ptr) {
+
+}
